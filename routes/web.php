@@ -26,3 +26,7 @@ Route::get('/insertar', function (){
 });
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, "index"])->name('product.list');
+
+Route::get('/checkout', function(){
+    return view('checkout');
+});
