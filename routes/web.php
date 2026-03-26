@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,5 @@ Route::get('/products', [App\Http\Controllers\ProductController::class, "index"]
 Route::get('/checkout', function(){
     return view('checkout');
 });
+
+Route::post('/checkout', [OrderController::class, "store"]);
